@@ -1,0 +1,29 @@
+{
+  "name": "@dishuostec/hyperapp-pulltorefresh",
+  "version": "0.0.1",
+  "description": "A pull to refresh component for Hyperapp forked from PulltoRefresh.js",
+  "main": "dist/pulltorefresh.js",
+  "license": "MIT",
+  "author": "dishuostec",
+  "repository": "dishuostec/hyperapp_pulltorefresh",
+  "keywords": [
+    "hyperapp",
+    "pulltorefresh"
+  ],
+  "scripts": {
+    "copy:scss": "cp src/css/*.scss dist/",
+    "build": "bili src/lib/index.js --target node:10 --jsx h --format es --filename '[name].js'",
+    "dev": "yarn build -- -w",
+    "prepublish": "npm run build && npm run copy:scss",
+    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "bili": "^3.1.2"
+  },
+  "peerDependencies": {
+    "hyperapp": "^1.2.9"
+  }
+}
