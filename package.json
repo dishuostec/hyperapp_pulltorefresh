@@ -15,7 +15,7 @@
     "build": "bili src/lib/index.js --target node:10 --jsx h --format es --filename '[name].js'",
     "dev": "yarn build -- -w",
     "prepublish": "npm run build && npm run copy:scss",
-    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish --access public"
   },
   "files": [
     "dist"
