@@ -8,7 +8,6 @@ const _shared = {
   state: 'pending',
   timeout: null,
   distResisted: 0,
-  passive: true,
   supportsPassive: false,
 };
 
