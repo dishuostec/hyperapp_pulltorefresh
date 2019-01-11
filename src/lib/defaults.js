@@ -4,7 +4,7 @@ export default {
   distReload: 50,
   distIgnore: 0,
   mainElement: 'body',
-  triggerElement: 'body',
+  triggerElement: 'html',
   ptrElement: '.ha_ptr',
   classPrefix: 'ha_ptr__',
   cssProp: 'min-height',
