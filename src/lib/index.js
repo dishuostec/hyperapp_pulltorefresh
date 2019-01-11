@@ -48,7 +48,7 @@ const PullToRefresh = ({
         instructionsReleaseToRefresh,
         instructionsRefreshing,
         refreshTimeout,
-        onRefresh: () => console.log('refresh'),
+        onRefresh,
         resistanceFunction,
         shouldPullToRefresh,
       });
