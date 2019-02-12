@@ -1,35 +1,38 @@
 import { h } from 'hyperapp';
 import ptr from './init';
 
+ptr.setPassiveMode(true);
+
 const PullToRefresh = ({
-                         key,
+  key,
 
-                         // pull to refresh options
-                         distThreshold,
-                         distMax,
-                         distReload,
-                         distIgnore,
-                         // mainElement,
-                         triggerElement,
-                         // ptrElement,
-                         // classPrefix,
-                         cssProp,
-                         iconArrow,
-                         iconRefreshing,
-                         instructionsPullToRefresh,
-                         instructionsReleaseToRefresh,
-                         instructionsRefreshing,
-                         refreshTimeout,
-                         // getMarkup,
-                         // getStyles,
-                         // onInit,
-                         onRefresh,
-                         resistanceFunction,
-                         shouldPullToRefresh,
+  // pull to refresh options
+  distThreshold,
+  distMax,
+  distReload,
+  distIgnore,
+  mainElement,
+  triggerElement,
+  // ptrElement,
+  // classPrefix,
+  cssProp,
+  iconArrow,
+  iconRefreshing,
+  instructionsPullToRefresh,
+  instructionsReleaseToRefresh,
+  instructionsRefreshing,
+  refreshTimeout,
+  // getMarkup,
+  // getStyles,
+  // onInit,
+  onRefresh,
+  resistanceFunction,
+  shouldPullToRefresh,
 
-                         // others
-                         ...props
-                       }, children) => (
+  // others
+  // hyperapp event
+  ...props
+}, children) => (
   <div
     {...props}
     key={key}
@@ -39,8 +42,8 @@ const PullToRefresh = ({
         distMax,
         distReload,
         distIgnore,
-        mainElement: element,
-        triggerElement,
+        mainElement: mainElement || element,
+        triggerElement: triggerElement || element,
         cssProp,
         iconArrow,
         iconRefreshing,
@@ -52,9 +55,11 @@ const PullToRefresh = ({
         resistanceFunction,
         shouldPullToRefresh,
       });
+      props.oncreate && props.oncreate(element);
     }}
     ondestroy={(element) => {
       element.pulltorefresh.destroy();
+      props.ondestroy && props.ondestroy(element);
       delete element.pulltorefresh;
     }}
   >
