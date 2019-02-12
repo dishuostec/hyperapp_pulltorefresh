@@ -12,37 +12,39 @@
   display: flex;
   align-items: flex-end;
   align-content: stretch;
-}
 
-.ha_ptr__box {
-  padding: 10px;
-  flex-basis: 100%;
-}
 
-.ha_ptr__pull {
-  transition: none;
-}
+  &__box {
+    padding: 10px;
+    flex-basis: 100%;
+  }
 
-.ha_ptr__text {
-  margin-top: .33em;
-  color: rgba(0, 0, 0, 0.3);
-}
+  &__pull {
+    transition: none;
+  }
 
-.ha_ptr__icon {
-  color: rgba(0, 0, 0, 0.3);
-  transition: transform .3s;
-}
+  &__text {
+    margin-top: .33em;
+    color: rgba(0, 0, 0, 0.3);
+  }
 
-/*
-When at the top of the page, disable vertical overscroll so passive touch
-listeners can take over.
-*/
-.ha_ptr__top {
-  touch-action: pan-x pan-down pinch-zoom;
-}
+  &__icon {
+    color: rgba(0, 0, 0, 0.3);
+    transition: transform .3s;
+  }
 
-.ha_ptr__release {
-  .ha_ptr__icon {
-    transform: rotate(180deg);
+
+  /*
+  When at the top of the page, disable vertical overscroll so passive touch
+  listeners can take over.
+  */
+  &__top {
+    touch-action: pan-x pan-down pinch-zoom;
+  }
+
+  &__release {
+    .ha_ptr__icon {
+      transform: rotate(180deg);
+    }
   }
 }
