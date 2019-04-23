@@ -58,7 +58,7 @@ const PullToRefresh = ({
       props.oncreate && props.oncreate(element);
     }}
     ondestroy={(element) => {
-      element.pulltorefresh.destroy();
+      ptr.destroyAll();
       props.ondestroy && props.ondestroy(element);
       delete element.pulltorefresh;
     }}

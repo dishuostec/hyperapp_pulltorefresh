@@ -37,8 +37,14 @@ export default options => {
     // stop pending any pending callbacks
     clearTimeout(_shared.timeout);
 
+    // remove class
+    _handler.mainElement.classList.toggle(`${_handler.classPrefix}top`, false);
+    
     // remove handler from shared state
-    _shared.handlers.splice(_handler.offset, 1);
+    const offset = _shared.handlers.indexOf(_handler);
+    _shared.handlers.splice(offset, 1);
+
+    console.log('destroy', offset);
   };
 
   return _handler;
