@@ -1,6 +1,6 @@
 {
   "name": "@dishuostec/hyperapp-pulltorefresh",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A pull to refresh component for Hyperapp forked from PulltoRefresh.js",
   "main": "dist/hyperapp-pulltorefresh.js",
   "license": "MIT",
