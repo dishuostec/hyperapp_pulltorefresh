@@ -43,8 +43,6 @@ export default options => {
     // remove handler from shared state
     const offset = _shared.handlers.indexOf(_handler);
     _shared.handlers.splice(offset, 1);
-
-    console.log('destroy', offset);
   };
 
   return _handler;
